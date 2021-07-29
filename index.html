@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/global.css">
+    <title>Relógio</title>
+</head>
+<body>
+    <main id="bg" class="container">
+        <h1 id="title">HORÁRIO LOCAL</h1>
+        <h3 id="clock"></h3>
+        <footer id="settings">
+            <label class="change_color_label">
+                <h4>COR DO RELÓGIO: </h4>
+                <input type="color" value="#711DFA" onchange="changeColor(this, '#clock')">
+            </label>
+            <label class="change_color_label">
+                <h4>COR DO FUNDO: </h4>
+                <input type="color" value="#7686E6" onchange="changeColor(this, '#bg')">
+            </label>
+            <label class="change_color_label">
+                <h4>COR DA FONTE: </h4>
+                <input type="color" value="#f3f3f3" onchange="changeFontColor(this)">
+            </label>
+        </footer>
+    </main>
+    <script src="scripts/index.js"></script>
+</body>
+</html> 
