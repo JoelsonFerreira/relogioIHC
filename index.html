@@ -9,7 +9,15 @@
 </head>
 <body>
     <main id="bg" class="container">
-        <h1 id="title">HORÁRIO LOCAL</h1>
+        <h1 id="title">
+            HORÁRIO LOCAL<br />
+        </h1>
+        <label id="change_font_size">
+            <h4>Tamanho da fonte:</h4> 
+            <input type="range" min="1" max="13" step="0.1" value="6" id="slider" oninput="Aumenta()">
+            <br>
+        </label>
+        <br>
         <h3 id="clock"></h3>
         <footer id="settings">
             <label class="change_color_label">
@@ -27,5 +35,7 @@
         </footer>
     </main>
     <script src="scripts/index.js"></script>
+    <script src="scripts/settings.js"></script>
+    <script src="script/handleHour.js"></script>
 </body>
 </html> 

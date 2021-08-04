@@ -1,11 +1,30 @@
-function changeColor(t, id) {
-    document.querySelector(id).style.backgroundColor = t.value;
+const form      = document.querySelector('#settings');
+const fontsize  = document.querySelector('#change_font_size');
+
+function readScreen(){
+    let speech = new SpeechSynthesisUtterance();
+    speech.lang = 'pt';
+    speech.volume = 50;
+
+    let novaHora = new Date();
+
+    let hora      = novaHora.getHours();
+    let minuto    = novaHora.getMinutes();
+
+    speech.text = hora + " horas e " + minuto + " minutos.";
+    
+    window.speechSynthesis.speak(speech);
 }
 
-function changeFontColor(t) {
-    document.querySelector("#clock").style.color = t.value;
-    document.querySelector("#title").style.color = t.value;
-}
+
+document.addEventListener("click", (e) => { 
+    const isClickInside = form.contains(e.target) || fontsize.contains(e.target);
+    if(!isClickInside) {
+        readScreen();
+    }
+});
+
+document.querySelector("#title").innerText += Intl.DateTimeFormat().resolvedOptions().timeZone;
 
 function zero(x) {
     if (x < 10) {
@@ -25,4 +44,4 @@ setInterval(function(){
     segundo = zero(segundo);
     
     document.getElementById('clock').textContent = hora+':'+minuto+':'+segundo;
-}, 1000)
+}, 1000);
